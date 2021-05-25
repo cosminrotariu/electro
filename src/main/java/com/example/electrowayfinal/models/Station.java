@@ -46,7 +46,7 @@ public class Station implements Serializable {
     private double longitude;
 
     @Basic
-    @Column(name = "description", nullable = true, columnDefinition = "varchar(255)")
+    @Column (name = "description", nullable = true, columnDefinition = "varchar(255")
     private String description;
 
     @ManyToOne
