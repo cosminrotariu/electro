@@ -175,7 +175,7 @@ public class UserService implements UserDetailsService {
         boolean exists = userRepository.existsById(id);
         if (!exists)
             throw new IllegalStateException("user with id " + id + " does NOT exist");
-        if (!userRepository.findUserById(id).get().getRoles().contains(roleRepository.findByName("ROLE_ADMIN").get())) {
+        if (!this.getCurrentUser(httpServletRequest).getRoles().contains(roleRepository.findByName("ROLE_ADMIN").get())) {
             throw new WrongPrivilegesException("you're not an admin");
         }
         List<Station> stationList = stationService.getAllStations();
