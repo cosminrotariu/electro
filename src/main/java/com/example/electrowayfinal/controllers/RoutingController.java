@@ -13,7 +13,6 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping(path = "/routing")
-@CrossOrigin(origins = "https://electrowayweb.herokuapp.com")
 public class RoutingController {
     private final RoutingService routingService;
 
